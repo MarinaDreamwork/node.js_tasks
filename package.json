@@ -1,19 +1,30 @@
 {
-  "name": "notes_application",
+  "name": "web-server",
   "version": "1.0.0",
-  "description": "creating simple notes app",
+  "description": "creating web-server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaDreamwork/node.js_tasks.git"
   },
   "keywords": [
-    "node",
-    "javascript"
+    "web-server"
   ],
   "author": "Marina Trushina <silaevamo@gmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaDreamwork/node.js_tasks/issues"
+  },
+  "homepage": "https://github.com/MarinaDreamwork/node.js_tasks#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
