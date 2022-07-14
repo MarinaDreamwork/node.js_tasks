@@ -1,6 +1,6 @@
 const yargs = require('yargs');
 const pkg = require('./package.json');
-const { addNote, printNotes, removeNote } = require('./notes.controller');
+const { addNote, printNotes, removeNote, updateNote } = require('./notes.controller');
 
 
 yargs.command({
@@ -39,6 +39,27 @@ yargs.command({
     id: {
       type: 'string',
       describe: 'Note id',
+      demandOption: true
+    }
+  }
+});
+
+yargs.command({
+  command: 'edit',
+  describe: 'Edit note by id',
+  async handler({ id, title }) {
+    console.log(`Add command - update id: ${id} with new title: ${title}`);
+    await updateNote(id, title);
+  },
+  builder: {
+    id: {
+      type: 'string',
+      describe: 'Note id',
+      demandOption: true
+    },
+    title: {
+      type: 'string',
+      describe: 'Note title',
       demandOption: true
     }
   }
